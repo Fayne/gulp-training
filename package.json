@@ -1,0 +1,19 @@
+{
+  "name": "gulp-training",
+  "version": "0.0.1",
+  "description": "This repository is for gulp training.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fayne/gulp-training.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "node"
+  ],
+  "author": "Fayne Guo",
+  "license": "private"
+}
