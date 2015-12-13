@@ -4,6 +4,8 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var minifyCss = require('gulp-minify-css');
 var concatCss = require('gulp-concat-css');
+var concatJs = require('gulp-concat');
+var uglifyJs = require('gulp-uglify');
 
 var paths = {
     scripts: [
@@ -38,6 +40,13 @@ gulp.task('css', function () {
         .pipe(gulp.dest('dist/css'));
 });
 
+gulp.task('script', function() {
+    return gulp.src(paths.scripts)
+        .pipe(concatJs("bundle.js"))
+        .pipe(uglifyJs())
+        .pipe(gulp.dest('dist/js'));
+});
+
 gulp.task('build', ['clean', 'sass'], function () {
-    gulp.start('css');
+    gulp.start('css', 'script');
 });
